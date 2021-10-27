@@ -1,0 +1,52 @@
+// Programa para calcular fatura de agua consumida
+
+programa
+{
+	
+	funcao inicio()
+	{
+	
+		 
+		real volume, valortotal, valoragua, valoresgoto
+
+		escreva ("Digite o volume de agua consumida: ")
+		leia(volume)
+
+		se(volume <= 5){
+			valoragua = 37.47
+			valoresgoto = 29.97
+			valortotal = (valoragua + valoresgoto)
+				escreva ("O valor total da fatura é de R$ ", valortotal,". O valor do consumo de agua é de R$ ", valoragua, ". O valor do esgoto é de R$ ", valoresgoto)
+				    	 }
+		se (volume <= 10 e volume > 5){
+			valoragua = 37.47 + ((volume - 5)*1.16)
+			valoresgoto = 29.97 + (((volume - 5)*1.16)*0.8)
+			valortotal = (valoragua + valoresgoto)
+		 		escreva ("O valor total da fatura é de R$ ", valortotal,". O valor do consumo de agua é de R$ ", valoragua, ". O valor do esgoto é de R$ ", valoresgoto)
+			}
+		se (volume <= 15 e volume > 10){
+			valoragua = 37.47 + ((volume - 10)*1.16) + ((volume - 5)*6.46)
+			valoresgoto = 29.97 + (((volume - 5)*1.16)*0.8) + (((volume - 10)*6.46)*0.8)
+			valortotal = (valoragua + valoresgoto)
+		 		escreva ("O valor total da fatura é de R$ ", valortotal,". O valor do consumo de agua é de R$ ", valoragua, ". O valor do esgoto é de R$ ", valoresgoto)			
+			}
+		se (volume <= 20 e volume > 15){
+			valoragua = 37.47 + ((volume - 15)*1.16) + ((volume - 10)*6.46) + ((volume - 5)*6.49)
+			valoresgoto = 29.97 + (((volume - 5)*1.16)*0.8) + (((volume - 10)*6.46)*0.8) + (((volume - 10)*6.49)*0.8)
+			valortotal = (valoragua + valoresgoto)
+		 		escreva ("O valor total da fatura é de R$ ", valortotal,". O valor do consumo de agua é de R$ ", valoragua, ". O valor do esgoto é de R$ ", valoresgoto)
+			}
+		se (volume <= 30 e volume > 20){
+			valoragua = 37.47 + ((volume - 25)*1.16) + ((volume - 20)*6.46) + ((volume - 15)*6.49) + ((volume - 10)*6.55)
+			valoresgoto = 29.97 + (((volume - 25)*1.16)*0.8) + (((volume - 20)*6.46)*0.8) + (((volume - 15)*6.49)*0.8) + (((volume - 10)*6.55)*0.8)
+			valortotal = (valoragua + valoresgoto)
+		 		escreva ("O valor total da fatura é de R$ ", valortotal,". O valor do consumo de agua é de R$ ", valoragua, ". O valor do esgoto é de R$ ", valoresgoto)
+			}							
+		se (volume > 30){
+			valoragua = 37.47 + ((5)*1.16) + ((5)*6.46) + ((5)*6.49) + ((10)*6.55) + ((volume - 30)*11.08)
+			valoresgoto = 29.97 + (((5)*1.16)*0.8) + (((5)*6.46)*0.8) + (((5)*6.49)*0.8) + (((10)*6.55)*0.8) + (((volume - 30)*11.08)*0.8)
+			valortotal = (valoragua + valoresgoto)
+		 		escreva ("O valor total da fatura é de R$ ", valortotal,". O valor do consumo de agua é de R$ ", valoragua, ". O valor do esgoto é de R$ ", valoresgoto)
+			}
+	}
+}
