@@ -1,0 +1,192 @@
+//Uma  máquina  de  vender  café  funciona  da seguinte  forma:  o  usuário  seleciona  um  tipo  de café,  
+//insere  algumas  notas  ou  moedas  na  máquina  e,  se  a  quantia  paga  for  suficiente  para pagar o 
+//face desejado, a máquina enche um copo descartável com o tipo de café selecionado e  dá  o  troco  em  
+//Faça  um  programa  para  imitar  esse  comportamento:  o  usuário informa qual é o tipo de café 
+//desejado e o valor pago, e o seu programa deve dizer qual deve ser  o  valor  do  troco  e  quantas  moedas  
+//são  necessárias  para  pagar  esse  troco.  Considere  a existência de moedas com os seguintes valores: 
+//R$ 1.00, R$ 0.50, R$ 0.25, R$ 0.10, R$ 0.05 e R$ 0.01.A tabela de preços é dada abaixo:
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro tipocafe, moeda, opcao, soma= 0, soma1=0, soma2=0, soma3=0, soma4=0, soma5=0, custocafe=0, soma6 =0, soma7=0,soma8=0,soma9=0,soma10=0, troco, cont1 = 0, cont05 = 0, cont025 = 0, cont010 = 0, cont005 = 0, cont001 = 0
+		real somatotal = 0.0
+
+
+		escreva("|  Tipo de Café   |   Preço   |\n")
+		escreva("|  Café Normal    |  R$ 1,05  |\n")
+		escreva("|  Café Expresso  |  R$ 1,52  |\n")
+		escreva("|  Capuccino      |  R$ 2,17  |\n")
+		escreva("|  Mocaccino      |  R$ 2,36  |\n")
+		escreva("--------------------------------------------\n")
+
+	
+					escreva("\nDeseja adicionar dinheiro (1);\nEscolher produto(2);\nCancelar(3)\n")
+					leia(opcao)	
+					limpa()
+			enquanto (opcao == 1){
+				escreva("Digite o valor da moeda inserida:\nDigite 70 para Nota de 200 reais\nDigite 60 para Nota de 100 reais\nDigite 50 para Nota de 50 reais\nDigite 40 para Nota de 20 reais\nDigite 30 para Nota de 10 reais\nDigite 20 para Nota de 5 reais\nDigite 10 para Nota de 2 reais\nDigite 1 para moeda de R$ 1.00\nDigite 2 para moeda de R$ 0.50\nDigite 3 para moeda de R$ 0.25\nDigite 4 para moeda de R$ 0.10\nDigite 5 para moeda de R$ 0.05\nDigite 6 para moeda de R$ 0.01\n")
+				leia(moeda)
+
+				se(moeda == 1){
+					soma = soma + 100}
+				se(moeda == 2){				
+					soma1 = soma1 + 50}
+				se(moeda == 3){
+					soma2 = soma2 + 25}
+				se (moeda == 4){
+					soma3 = soma3 + 10}
+				se (moeda == 5){
+					soma4 = soma4 + 5}
+				se (moeda == 6){
+					soma5 = soma5 + 1}
+				se(moeda == 10){
+					soma6 = soma6 + 200}
+				se(moeda == 20){
+					soma7 = soma7 + 500}
+				se(moeda == 30){
+					soma8 = soma8 + 1000}
+				se(moeda == 40){
+					soma9 = soma9 + 2000}
+				se(moeda == 50){
+					soma8 = soma8 + 5000}
+				se(moeda == 60){
+					soma9 = soma9 + 10000}
+				se(moeda == 70){
+					soma10 = soma10 + 20000}
+				somatotal = (soma + soma1 + soma2 + soma3 + soma4 + soma5 + soma6 + soma7 + soma8 + soma9 + soma10) 
+				escreva("Valor inserido até o momento R$ ",(somatotal)/100)		
+				escreva("\nDeseja continuar inserindo dinheiro (1);\nEscolher produto(2);\nCancelar(3)\n")
+				leia(opcao)
+				limpa()
+					}
+
+					
+					se(opcao == 2){
+					se (somatotal < 105){
+					escreva("Você ainda não possui dinheiro suficiente, falta R$ ",(105 - somatotal)/100,"\n")}
+					se(somatotal >= 105){
+							escreva("\nVocê Possuí R$ ", (somatotal/100), " inseridos.\n")
+							escreva("|  Tipo de Café   |   Preço   |\n")
+							escreva("|  Café Normal    |  R$ 1,05  | Aperte 1\n")
+							escreva("|  Café Expresso  |  R$ 1,52  | Aperte 2\n")
+							escreva("|  Capuccino      |  R$ 2,17  | Aperte 3\n")
+							escreva("|  Mocaccino      |  R$ 2,36  | Aperte 4\n")
+							escreva("--------------------------------------------\n")
+							leia (tipocafe)	
+						
+					se (tipocafe == 1){
+						somatotal = 105 - somatotal
+						escreva("Seu Café Normal saíra\n")	
+						enquanto(somatotal >= 100){				
+						somatotal = somatotal - 100
+						cont1++}						
+						escreva(cont1, " moedas de R$1,00\n")
+						enquanto(somatotal >= 50){				
+						somatotal = somatotal - 50
+						cont05++}
+						escreva(cont05, " moedas de R$0,50\n")
+						enquanto(somatotal >= 25){				
+						somatotal = somatotal - 25
+						cont025++}
+						escreva(cont025, " moedas de R$0,25\n")
+						enquanto(somatotal >= 10){					
+						somatotal = somatotal - 10
+						cont010++}
+						escreva(cont010, " moedas de R$0,10\n")
+						enquanto(somatotal >= 5){				
+						somatotal = somatotal - 5
+						cont005++}
+						escreva(cont005, " moedas de R$0,05\n")
+						enquanto(somatotal >= 1){				
+						somatotal = somatotal - 1
+						cont001++}
+						}
+					se (tipocafe == 2 e somatotal >= 152){
+						somatotal = 152 - somatotal
+						escreva("Seu Café Expresso saíra\n")	
+						enquanto(somatotal >= 100){				
+						somatotal = somatotal - 100
+						cont1++}						
+						escreva(cont1, " moedas de R$1,00\n")
+						enquanto(somatotal >= 50){				
+						somatotal = somatotal - 50
+						cont05++}
+						escreva(cont05, " moedas de R$0,50\n")
+						enquanto(somatotal >= 25){				
+						somatotal = somatotal - 25
+						cont025++}
+						escreva(cont025, " moedas de R$0,25\n")
+						enquanto(somatotal >= 10){					
+						somatotal = somatotal - 10
+						cont010++}
+						escreva(cont010, " moedas de R$0,10\n")
+						enquanto(somatotal >= 5){				
+						somatotal= somatotal - 5
+						cont005++}
+						escreva(cont005, " moedas de R$0,05\n")
+						enquanto(somatotal >= 1){				
+						somatotal = somatotal - 1
+						cont001++}						
+						}
+					se (tipocafe == 3 e somatotal >= 217){
+						somatotal = 217 - somatotal
+						escreva("Seu Capucino saíra\n")		
+						enquanto(somatotal >= 100){				
+						somatotal = somatotal - 100
+						cont1++}						
+						escreva(cont1, " moedas de R$1,00\n")
+						enquanto(somatotal >= 50){				
+						somatotal = somatotal - 50
+						cont05++}
+						escreva(cont05, " moedas de R$0,50\n")
+						enquanto(somatotal >= 25){				
+						somatotal = somatotal - 25
+						cont025++}
+						escreva(cont025, " moedas de R$0,25\n")
+						enquanto(somatotal >= 10){					
+						somatotal = somatotal - 10
+						cont010++}
+						escreva(cont010, " moedas de R$0,10\n")
+						enquanto(somatotal >= 5){				
+						somatotal= somatotal - 5
+						cont005++}
+						escreva(cont005, " moedas de R$0,05\n")
+						enquanto(somatotal >= 1){				
+						somatotal = somatotal - 1
+						cont001++}
+						}
+					se (tipocafe == 4 e somatotal >= 236){
+						somatotal = (236 - somatotal)	
+						escreva("Seu Mocaccino saíra\n")						
+						enquanto(somatotal >= 100){				
+						somatotal= somatotal - 100
+						cont1++}						
+						escreva(cont1, " moedas de R$1,00\n")
+						enquanto(somatotal >= 50){				
+						somatotal = somatotal - 50
+						cont05++}
+						escreva(cont05, " moedas de R$0,50\n")
+						enquanto(somatotal >= 25){				
+						somatotal = somatotal - 25
+						cont025++}
+						escreva(cont025, " moedas de R$0,25\n")
+						enquanto(somatotal >= 10){					
+						somatotal = somatotal - 10
+						cont010++}
+						escreva(cont010, " moedas de R$0,10\n")
+						enquanto(somatotal >= 5){				
+						somatotal = somatotal - 5
+						cont005++}
+						escreva(cont005, " moedas de R$0,05\n")
+						enquanto(somatotal >= 1){				
+						somatotal = somatotal - 1
+						cont001++}
+						}		
+						escreva(cont001, " moedas de R$0,01\n")		
+			}
+		}
+	}
+}
