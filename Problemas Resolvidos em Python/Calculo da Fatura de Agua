@@ -1,0 +1,41 @@
+#Programa para calcular fatura de agua consumida
+valoragua = 0
+valoresgoto = 0
+volume = float(input("Digite o volume de agua consumida: "))
+
+if(volume <= 5):
+    valoragua = 37.47
+    valoresgoto = 29.97
+    valortotal = (valoragua + valoresgoto)
+    print("O valor total da fatura é de R$ %.2f. O valor do consumo de agua é de R$ %.2f.O valor do esgoto é de R$ %.2f." %(valortotal,valoragua,valoresgoto))
+
+if (volume <= 10 and volume > 5):
+    valoragua = 37.47 + ((volume - 5)*1.16)
+    valoresgoto = 29.97 + (((volume - 5)*1.16)*0.8)
+    valortotal = (valoragua + valoresgoto)
+    print("O valor total da fatura é de R$ %.2f. O valor do consumo de agua é de R$ %.2f.O valor do esgoto é de R$ %.2f." %(valortotal,valoragua,valoresgoto))
+
+if (volume <= 15 and volume > 10):
+    valoragua = 37.47 + ((volume - 10)*1.16) + ((volume - 5)*6.46)
+    valoresgoto = 29.97 + (((volume - 5)*1.16)*0.8) + (((volume - 10)*6.46)*0.8)
+    valortotal = (valoragua + valoresgoto)
+    print("O valor total da fatura é de R$ %.2f. O valor do consumo de agua é de R$ %.2f.O valor do esgoto é de R$ %.2f." %(valortotal,valoragua,valoresgoto))		
+
+if (volume <= 20 and volume > 15):
+    valoragua = 37.47 + ((volume - 15)*1.16) + ((volume - 10)*6.46) + ((volume - 5)*6.49)
+    valoresgoto = 29.97 + (((volume - 5)*1.16)*0.8) + (((volume - 10)*6.46)*0.8) + (((volume - 10)*6.49)*0.8)
+    valortotal = (valoragua + valoresgoto)
+    print("O valor total da fatura é de R$ %.2f. O valor do consumo de agua é de R$ %.2f.O valor do esgoto é de R$ %.2f." %(valortotal,valoragua,valoresgoto))
+
+if (volume <= 30 and volume > 20):
+    valoragua = 37.47 + ((volume - 25)*1.16) + ((volume - 20)*6.46) + ((volume - 15)*6.49) + ((volume - 10)*6.55)
+    valoresgoto = 29.97 + (((volume - 25)*1.16)*0.8) + (((volume - 20)*6.46)*0.8) + (((volume - 15)*6.49)*0.8) + (((volume - 10)*6.55)*0.8)
+    valortotal = (valoragua + valoresgoto)
+    print("O valor total da fatura é de R$ %.2f. O valor do consumo de agua é de R$ %.2f.O valor do esgoto é de R$ %.2f." %(valortotal,valoragua,valoresgoto))				
+
+if (volume > 30):
+    valoragua = 37.47 + ((5)*1.16) + ((5)*6.46) + ((5)*6.49) + ((10)*6.55) + ((volume - 30)*11.08)
+    valoresgoto = 29.97 + (((5)*1.16)*0.8) + (((5)*6.46)*0.8) + (((5)*6.49)*0.8) + (((10)*6.55)*0.8) + (((volume - 30)*11.08)*0.8)
+    valortotal = (valoragua + valoresgoto)
+    print("O valor total da fatura é de R$ %.2f. O valor do consumo de agua é de R$ %.2f.O valor do esgoto é de R$ %.2f." %(valortotal,valoragua,valoresgoto))
+			
