@@ -1,0 +1,74 @@
+//O programa de fidelidade de uma determinada livraria premia seus clientes de acordo com o número de livros comprados a cada bimestre. Os pontos são atribuídos da seguinte forma
+//Se um cliente comprar 0 livros, ele ganhará 0 pontos.
+//Se um cliente comprar um livro, ele ganhará 5 pontos.
+//Se um cliente comprar dois livros, ele ganhará 15 pontos
+//Se um cliente comprar 3 livros, ele ganhará 30 pontos
+//Se um cliente comprar 4 ou mais livros, ele ganhará 60 pontos
+programa {
+	funcao inicio() {
+		inteiro bimestre, livros, total=0, cont, pontos, total1, brinde
+		
+		para (cont =1; cont <=6; cont +=1){
+		escreva ("Digite o bimestre da compra: ", "\n")
+		leia(bimestre)
+		escreva ("Digite a quantidade de livros comprados no bimestre ", bimestre,".","\n")
+		leia (livros)
+		limpa()
+		se (livros == 0){
+		    pontos = 0
+		    total = total + pontos
+		}
+		se (livros == 1){
+		    pontos = 5
+		    total = total + pontos
+		}
+		se (livros == 2){
+		    pontos = 15
+		    total = total + pontos
+		}
+		se (livros == 3){
+		    pontos = 30
+		    total = total + pontos
+		}
+		se (livros >= 4){
+		    pontos = 60
+		    total = total + pontos
+		}
+		}
+        escreva ("Você possuí ", total, "pontos.","\n")
+        se(total >=20){
+        escreva ("1 - Você pode escolher uma Ecobag por 20 pontos.","\n", "2 - Caneta Personalizada por 30 pontos.","\n", "3 - Um livro (com valor máximo de R$ 30,00) por 35 pontos.","\n", "4 - Uma Luminária de cabeceira por 60 pontos.","\n","5 - 2 livros (com valor máximo de R$100,00) por 150 pontos. ","\n", 
+"6 - Powerbank por 120 pontos.","\n", "7 - Digite para sair.", "\n")
+        leia (brinde)
+        se (brinde == 1 e total >= 20 ){
+        escreva ("Parabéns você adquiriu uma Ecobag e poderá retirar diretamente na livraria. Seu saldo atual é de: ", (total -20)," pontos.")}
+        se (brinde == 2 e total >= 30 ){
+        escreva ("Parabéns você adquiriu uma Caneta Personalizada e poderá retirar diretamente na livraria. Seu saldo atual é de: ", (total -30)," pontos.")}
+        se (brinde == 3 e total >= 35 ){
+        escreva ("Parabéns você adquiriu um livro (com valor máximo de R$ 30,00) e poderá retirar diretamente na livraria. Seu saldo atual é de: ", (total -35)," pontos.")}
+        se (brinde == 4 e total >= 60 ){
+        escreva ("Parabéns você adquiriu uma Luminária de Cabeceira e poderá retirar diretamente na livraria. Seu saldo atual é de: ", (total -60),"pontos.")}
+        se (brinde == 5 e total >= 150 ){
+        escreva ("Parabéns você adquiriu 2 livros (com valor máximo de R$100,00) e poderá retirar diretamente na livraria. Seu saldo atual é de: ", (total -150)," pontos.")}
+        se (brinde == 6 e total >= 120 ){
+        escreva ("Parabéns você adquiriu um Powerbank e poderá retirar diretamente na livraria. Seu saldo atual é de: ", (total -120)," pontos.")}
+        se (brinde == 7){
+        escreva ("Até Logo!!")}
+        se (brinde == 2 e total <= 30 ){
+        escreva ("Você não possui pontos para adquirir uma Caneta Personalizada.")}
+        se (brinde == 3 e total <= 35 ){
+        escreva ("Você não possui pontos para adquirir o livro (com valor máximo de R$ 30,00).")}
+        se (brinde == 4 e total <= 60 ){
+        escreva ("Você não possui pontos para adquirir a Luminária de Cabeceira.")}
+        se (brinde == 5 e total <= 150 ){
+        escreva ("Você não possui pontos suficientes para adquirir os 2 livros (com valor máximo de R$100,00).")}
+        se (brinde == 6 e total <= 120 ){
+        escreva ("Você não possui pontos suficientes para adquirir o Powerbank.")}
+        }
+        senao{
+        escreva("Você não possui pontos suficientes.")
+        }
+        }
+        }
+        
+	
